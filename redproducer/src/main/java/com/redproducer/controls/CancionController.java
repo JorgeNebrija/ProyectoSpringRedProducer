@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.redproducer.models.Cancion;
+
 @RestController
 @RequestMapping("/api/canciones")
 public class CancionController {

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.redproducer.models.Artista;
+
 @RestController
 @RequestMapping("/api/artistas")
 public class ArtistaController {
