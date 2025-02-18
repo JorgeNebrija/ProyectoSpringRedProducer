@@ -17,14 +17,12 @@ import com.redproducer.services.CancionService;
 public class CancionController {
     @Autowired
     private CancionService cancionService;
-
     @GetMapping
-    public List<CancionRepository> obtenerCanciones() {
+    public List<Cancion> obtenerTodasLasCanciones() {
         return cancionService.obtenerTodasLasCanciones();
     }
-
     @GetMapping("/artista/{idArtista}")
-    public List<CancionRepository> obtenerCancionesPorArtista(@PathVariable Long idArtista) {
+    public List<Cancion> obtenerCancionesPorArtista(@PathVariable Long idArtista) {
         return cancionService.obtenerCancionesPorArtista(idArtista);
     }
 }

@@ -1,5 +1,10 @@
 package com.redproducer.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
-public interface LetraRepository extends JpaRepository<LetraRepository, Long> {}
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.redproducer.models.Letra; // Importa la entidad correctamente
+
+public interface LetraRepository extends JpaRepository<Letra, Long> {
+    List<Letra> findByCancionId(Long idCancion);
+}
