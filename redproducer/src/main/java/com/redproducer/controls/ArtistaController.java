@@ -2,6 +2,7 @@ package com.redproducer.controls;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +13,13 @@ import com.redproducer.repositories.ArtistaRepository;
 import com.redproducer.services.ArtistaService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173") // Permite peticiones desde el frontend
 @RequestMapping("/api/artistas")
 public class ArtistaController {
-    @Autowired
-    private ArtistaService artistaService;
-    @GetMapping
-    public List<Artista> obtenerTodosLosArtistas() {
-        return artistaService.obtenerTodosLosArtistas();
-    }
+	@Autowired
+	private ArtistaService artistaService;
+	@GetMapping
+	public List<Artista> obtenerTodosLosArtistas() {
+		return artistaService.obtenerTodosLosArtistas();
+	}
 }
