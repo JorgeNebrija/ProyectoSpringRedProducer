@@ -13,19 +13,26 @@ import com.redproducer.models.Cancion;
 import com.redproducer.repositories.CancionRepository;
 import com.redproducer.services.CancionService;
 
-@RestController
-@CrossOrigin(origins = "http://localhost:5173") // Permite peticiones desde el frontend
-@RequestMapping("/api/canciones")
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/canciones") // Ruta del endpoint
+@CrossOrigin(origins = "http://localhost:5173") // Permitir peticiones desde React
 public class CancionController {
-	@Autowired
-	private CancionService cancionService;
-	@GetMapping
-	public List<Cancion> obtenerTodasLasCanciones() {
-		return cancionService.obtenerTodasLasCanciones();
-	}
-	@GetMapping("/artista/{idArtista}")
-	public List<Cancion> obtenerCancionesPorArtista(@PathVariable Long idArtista) {
-		return cancionService.obtenerCancionesPorArtista(idArtista);
-	}
+
+    private final CancionService cancionService;
+
+    public CancionController(CancionService cancionService) {
+        this.cancionService = cancionService;
+    }
+
+    @GetMapping
+    public List<Cancion> obtenerCanciones() {
+        return cancionService.obtenerTodasLasCanciones();
+    }
 }
