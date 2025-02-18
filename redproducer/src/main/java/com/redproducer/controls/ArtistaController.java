@@ -16,9 +16,8 @@ import com.redproducer.services.ArtistaService;
 public class ArtistaController {
     @Autowired
     private ArtistaService artistaService;
-
     @GetMapping
-    public List<ArtistaRepository> obtenerArtistas() {
+    public List<Artista> obtenerTodosLosArtistas() {
         return artistaService.obtenerTodosLosArtistas();
     }
 }

@@ -17,9 +17,9 @@ import com.redproducer.services.LetraService;
 public class LetraController {
     @Autowired
     private LetraService letraService;
-
     @GetMapping("/cancion/{idCancion}")
-    public List<LetraRepository> obtenerLetrasPorCancion(@PathVariable Long idCancion) {
+    public List<Letra> obtenerLetrasPorCancion(@PathVariable Long idCancion) {
         return letraService.obtenerLetrasPorCancion(idCancion);
     }
 }
+

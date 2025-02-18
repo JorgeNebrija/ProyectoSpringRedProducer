@@ -12,12 +12,10 @@ import com.redproducer.repositories.CancionRepository;
 public class CancionService {
     @Autowired
     private CancionRepository cancionRepository;
-
-    public List<CancionRepository> obtenerTodasLasCanciones() {
+    public List<Cancion> obtenerTodasLasCanciones() {
         return cancionRepository.findAll();
     }
-
-    public List<CancionRepository> obtenerCancionesPorArtista(Long idArtista) {
+    public List<Cancion> obtenerCancionesPorArtista(Long idArtista) {
         return cancionRepository.findByArtistaId(idArtista);
     }
 }

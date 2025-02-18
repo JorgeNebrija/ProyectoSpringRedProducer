@@ -12,8 +12,7 @@ import com.redproducer.repositories.ArtistaRepository;
 public class ArtistaService {
     @Autowired
     private ArtistaRepository artistaRepository;
-
-    public List<ArtistaRepository> obtenerTodosLosArtistas() {
+    public List<Artista> obtenerTodosLosArtistas() {
         return artistaRepository.findAll();
     }
 }

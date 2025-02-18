@@ -12,8 +12,7 @@ import com.redproducer.repositories.LetraRepository;
 public class LetraService {
     @Autowired
     private LetraRepository letraRepository;
-
-    public List<LetraRepository> obtenerLetrasPorCancion(Long idCancion) {
-        return letraRepository.findAll();
+    public List<Letra> obtenerLetrasPorCancion(Long idCancion) {
+        return letraRepository.findByCancionId(idCancion);
     }
 }
