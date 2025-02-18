@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.redproducer.models.Artista;
+import com.redproducer.repositories.ArtistaRepository;
+import com.redproducer.services.ArtistaService;
 
 @RestController
 @RequestMapping("/api/artistas")
@@ -16,7 +18,7 @@ public class ArtistaController {
     private ArtistaService artistaService;
 
     @GetMapping
-    public List<Artista> obtenerArtistas() {
+    public List<ArtistaRepository> obtenerArtistas() {
         return artistaService.obtenerTodosLosArtistas();
     }
 }
