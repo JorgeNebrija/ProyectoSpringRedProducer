@@ -1,4 +1,4 @@
-package com.redproducer.repository;
+package com.redproducer.repositories;
 
 import java.util.List;
 
