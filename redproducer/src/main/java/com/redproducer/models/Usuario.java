@@ -11,7 +11,8 @@ public class Usuario {
     private String username;
     private String password;
 
-    public Usuario() {}
+    public Usuario() {
+    }
 
     public Long getId() {
         return id;
@@ -33,10 +34,9 @@ public class Usuario {
         this.password = password;
     }
 
-	@Override
-	public String toString() {
-		return "Usuario [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
-	}
-    
-    
+    @Override
+    public String toString() {
+        return "Usuario [id=" + id + ", username=" + username + ", password=" + password + "]";
+    }
+
 }

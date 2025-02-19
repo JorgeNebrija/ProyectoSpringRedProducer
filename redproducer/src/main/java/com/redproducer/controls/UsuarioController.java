@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.crudusuario.model.Usuario;
-import com.example.crudusuario.service.UsuarioService;
+import com.redproducer.models.Usuario;
+import com.redproducer.services.UsuarioService;
+
+
 
 @Controller
 public class UsuarioController {
