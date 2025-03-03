@@ -1,7 +1,7 @@
 package com.redproducer.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "letras")
@@ -15,37 +15,18 @@ public class Letra {
 
     @ManyToOne
     @JoinColumn(name = "id_cancion")
+    @JsonIgnore // Evita que Letra serialice la Cancion y cause recursión infinita
     private Cancion cancion;
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public int getTiempo() { return tiempo; }
+    public void setTiempo(int tiempo) { this.tiempo = tiempo; }
 
-    public int getTiempo() {
-        return tiempo;
-    }
+    public String getTexto() { return texto; }
+    public void setTexto(String texto) { this.texto = texto; }
 
-    public void setTiempo(int tiempo) {
-        this.tiempo = tiempo;
-    }
-
-    public String getTexto() {
-        return texto;
-    }
-
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
-
-    public Cancion getCancion() {
-        return cancion;
-    }
-
-    public void setCancion(Cancion cancion) {
-        this.cancion = cancion;
-    }
+    public Cancion getCancion() { return cancion; }
+    public void setCancion(Cancion cancion) { this.cancion = cancion; }
 }

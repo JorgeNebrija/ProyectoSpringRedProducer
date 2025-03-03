@@ -18,7 +18,7 @@ public class CancionService {
 
     public List<Cancion> obtenerTodasLasCanciones() {
         List<Cancion> canciones = cancionRepository.findAll();
-        System.out.println("Canciones en la base de datos: " + canciones.size()); // 🔴 Ver cuántas canciones devuelve
+        System.out.println("Canciones en la base de datos: " + canciones.size()); //Ver cuántas canciones devuelve
         return canciones;
     }
     
