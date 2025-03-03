@@ -1,4 +1,6 @@
 package com.redproducer.models;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -12,6 +14,7 @@ public class Artista {
     private String nombre;
     
     @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference // Evita la serialización infinita
     private List<Cancion> canciones;
     
     public Long getId() {
